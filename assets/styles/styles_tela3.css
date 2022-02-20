@@ -1,0 +1,182 @@
+body > header{
+	right:0;
+	top:0;
+	left:0;
+	line-height:43px;
+	position:fixed;
+	font-size:37px;
+	background:#EC362D;
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	height:69px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	z-index: 10;
+	width:100%;
+	font-weight:bold;
+    color: #FFFFFF;
+}
+
+/* Tela 3 */
+/* .tela3 * {
+    color: #000000;
+} */
+
+.page3 .tela3 {
+    margin-top: 69px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:  #E5E5E5;
+}
+.page3 .tela3 div.titulo {
+    width: 100%;
+    height: 89px;
+}
+
+.page3 .tela3 div p {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 37px;
+}
+.page3 form {
+    width: 100%;
+}
+
+/* Inputs */
+.cor__branco {
+    background-color: #FFFFFF;
+    padding: 21px 0;
+}
+.page3 .tela3 div.inputs .conjunto__pergunta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 21px 0;
+    margin-bottom: 24px;
+    background-color: #FFFFFF;
+}
+
+.page3 .tela3__2 div.inputs .conjunto__pergunta {
+    padding: 21px 0 0 0;
+}
+
+.page3 .input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 9px;
+}
+.page3 .conjunto__inputs {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.page3 .tela3 div.inputs input {
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    height: 46px;
+    width: calc(100% - 32px);
+}
+.page3 input {
+    padding-left: 14px;
+}
+.page3 input:focus {
+    outline: 0;
+}
+.page3 .tela3 div.inputs textarea {
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    /* height: 177px; */
+    width: calc(100% - 32px);
+}
+.page3 textarea {
+    padding: 14px;
+}
+.page3 textarea:focus {
+    outline: 0;
+}
+
+/* Configurações do Placeholder */
+.page3 input:-moz-placeholder { 
+    font-style: italic;
+    font-size: 19px;
+    color: #BABABA;
+    font-family: 'Roboto', sans-serif;
+
+}
+.page3 textarea:-moz-placeholder { 
+    font-style: italic;
+    font-size: 19px;
+    color: #BABABA;
+    font-family: 'Roboto', sans-serif;
+ }
+ ::-webkit-input-placeholder  { 
+    font-style: italic;
+    font-size: 19px;
+    color: #BABABA;
+    font-family: 'Roboto', sans-serif;
+ }
+
+
+/* Span */
+.page3 .tela3 span {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-left: 17px;
+}
+
+.page3 .tela3 .editar__pergunta {
+    height: 74px;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    margin-top: 24px;
+}
+.page3 .editar__pergunta img {
+    margin-right: 17px;
+}
+
+/* Botão */
+.page3 .tela3 .botao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 28px 0;
+}
+.page3 .tela3 button {
+    background-color: #EC362D;
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFF5F4;
+    border: 0;
+    border-radius: 15px;
+    height: 54px;
+    width: calc(100% - 54px);
+}
+.page3 .tela3__4 {
+    background-color: #FFFFFF;
+}
+.page3 .tela3__4__img {
+    width: 100%;
+    padding: 0 17px;
+}
+.page3 .tela3__4 img {
+    width: 100%;
+}
+
+.page3 .tela3__4 .voltar__home span {
+    font-size: 18px;
+    font-weight: 400;
+    color: #818181;
+}
+
+/* Classe que esconde o layout */
+.page3 .escondido {
+    display: none;
+}
