@@ -74,6 +74,29 @@ function validarTela3_2(){
     }
 }
 
+//===================VALIDAÇÃO DE TODOS OS CAMPOS TELA 3_3================================
+function validarTela3_3(){
+    niveisSemValidar = [];
+    levels = [];
+    for(let i = 0; i < qtdNiveis; i++){
+        capturarCampoDigitadoNivel(i);
+        validarNiveis(niveisSemValidar[i]);
+    }
+    if(levels.length == qtdNiveis){
+        console.log("Níveis Válidos");
+
+        quizz = {
+            title: title,
+            image: image,
+            questions: questions,
+            levels: levels
+        }
+        enviarQuizz ();   
+
+    } else {
+        alert("Há níveis não validados! Verique e tente novamente");
+    }
+}
 
 
 //---------------FUNÇÕES DE VALIDAÇÕES COMPLEMENTARES-----------------------
@@ -212,5 +235,46 @@ function validarTextoResposta (textoResposta) {
         console.log(textoResposta + " é um TEXTO DA RESPOSTA válido!");
         console.log("TAMANHO do texto : " + textoResposta.length);
         return true;
+   }
+}
+
+//===================VALIDAÇÕES NA TELA 3_3================================
+
+function validarNiveis(nivelAValidar) {
+    let isValidoTituloNivel = validarTituloNivel(nivelAValidar.title);
+    let isValidoValorMinimo = validarPercentagem(nivelAValidar.minValue);
+    let isValidoUrlImagem = validarURL(nivelAValidar.image);
+    let isValidoDescricao = validarDescricaoNivel(nivelAValidar.text);
+
+    if (isValidoTituloNivel && isValidoValorMinimo && isValidoUrlImagem && isValidoDescricao){
+        let nivelValidado = nivelAValidar;
+        levels.push(nivelValidado);
+        console.log("LEVEL ADICIONADO");
+    } else {
+        console.log("Há campos inválidados!");
+    }
+}
+
+function validarTituloNivel (tituloNivel) {
+    if (tituloNivel.length >= 10) {
+       return true;
+   } else {
+       return false;
+   }
+}
+
+function validarPercentagem (percentagem) {
+    if (percentagem >= 0 && percentagem <= 100) {
+       return true;
+   } else {
+       return false;
+   }
+}
+
+function validarDescricaoNivel (descricaoNivel) {
+    if (descricaoNivel.length >= 30) {
+       return true;
+   } else {
+       return false;
    }
 }
