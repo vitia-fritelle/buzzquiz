@@ -1,0 +1,251 @@
+.tela1 header {
+	font-weight:bold;
+}
+.tela1 ion-icon,.tela1 figure,.tela1 button {
+	cursor:pointer;
+}
+.tela1 h3 {
+	color:#000000;
+	font-weight:bold;
+}
+.tela1 p {
+	align-items:center;
+}
+
+.tela1 h3, .tela1 p{
+	line-height:23px;
+	font-size:20px;
+	text-align:center;
+}
+
+.tela1 figure figcaption{
+	z-index:1;
+}
+
+body > header{
+	right:0;
+	top:0;
+	left:0;
+	line-height:43px;
+	position:fixed;
+	font-size:37px;
+	background:#EC362D;
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	height:69px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	z-index: 10;
+	width:100%;
+	font-weight:bold;
+}
+
+.tela1 {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-top:69px;
+	padding:0 17px;
+	flex-flow:column nowrap;
+	background-color:#FAFAFA;
+}
+
+.tela1 .your-quizzes {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-flow:column nowrap;
+	margin-top:31px;
+}
+
+.tela1 .your-quizzes header{
+	display:none;
+}
+
+.tela1 .your-quizzes header h3 {
+	display:flex;
+	align-items:center;
+}
+
+.tela1 .your-quizzes .your-quizzes-list {
+	display:flex;
+	width:100%;
+	align-items:center;
+	justify-content:center;
+	flex-flow:column nowrap;
+	background-color:#FAFAFA;
+	border:1px dashed #D5D5D5;
+	box-sizing:border-box;
+	border-radius:5px;
+}
+
+.tela1 .your-quizzes .your-quizzes-list .your-quizz {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-flow:column nowrap;
+	min-width:340px;
+	height:181px;
+}
+
+.tela1 .your-quizzes .your-quizzes-list .your-quizz button {
+	background-color:#FAFAFA;
+}
+
+.tela1 .your-quizzes .your-quizzes-list .your-quizz p {
+	display:flex;
+	height:107px;
+	width:250px;
+	color:#B9B9B9;
+}
+.tela1 .your-quizzes .your-quizzes-list .your-quizz button {
+	text-align:center;
+}
+
+.tela1 .your-quizzes .your-quizzes-list .your-quizzes header ion-icon{
+	border-radius:500px;
+	width:31px;
+	height:30px;
+	color:#EC362D;
+}
+
+.tela1 .your-quizzes .your-quizzes-list .your-quizz button{
+	border:1px dashed #EC362D;
+	border-radius:50px;
+	font-size:21px;
+	width:136px;
+	height:40px;
+	line-height:25px;
+	color:#EC362D;
+}
+
+.tela1 .has-quizzes{
+	margin-top:38px;
+}
+
+.tela1 .has-quizzes > header{
+	display:flex;
+	flex-flow:row nowrap;
+	margin-bottom:10px;
+	justify-content:space-between;
+	width:100%;
+	align-items:center;
+}
+
+.tela1 .has-quizzes > header ion-icon{
+	color: #EC362D;
+	width: 31px;
+	height: 30px;
+}
+
+.tela1 .has-quizzes .your-quizzes-list{
+	border:none;
+	display:flex;
+	flex-flow:column nowrap;
+	justify-content:space-between;
+}
+.tela1 .has-quizzes .your-quizzes-list .your-quizz {
+	margin-bottom:14px;
+}
+
+.tela1 .quizzes{
+	display:flex;
+	flex-flow:column nowrap;
+	margin-top:72px;
+}
+.tela1 .quizzes h3 {
+	margin-bottom:14px;
+	text-align: left;
+}
+
+.tela1 .quizz {
+	margin-bottom: 14px;
+}
+
+.tela1 figure{
+	width: 340px;
+	height: 181px;
+	position:relative;
+	border-radius:5px;
+}
+.tela1 figure:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background:linear-gradient(180deg,        
+	rgba(255, 255, 255, 0) 0%,        
+	rgba(0, 0, 0, 0.5) 64.58%,         
+	#000000 100%    
+	);
+	z-index:1;
+	border-radius:5px;
+}
+
+.tela1 figure img{
+	height:100%;
+	border-radius:5px;
+	width:100%;
+}
+.tela1 figure figcaption{
+	font-size:19px;
+	line-height:22px;
+	bottom:8px;
+	position:absolute;
+	left:18px;
+	right:21px;
+	z-index:2;
+	overflow: hidden;
+}
+.tela1 .your-quizz {
+	position: relative;
+}
+.tela1 .quizz-utilities {
+	position: absolute;
+	z-index:2;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 43px;
+	height: 87px;
+	background-color: #EC362D;
+	border-radius: 10px 0px 0px 11px;
+	color: #ffffff;
+	right:0;
+	top:9px;
+}
+.tela1 .quizz-utilities ion-icon {
+	width: 19px;
+	height: 21.92px;
+}
+
+@media (min-width: 1100px) {
+	.tela1 .quizzes,.tela1 .your-quizzes {
+		width: 1051px;
+	}
+	.tela1 .your-quizzes {
+		margin-top: 77px;
+	}
+	.tela1 .has-quizzes {
+		margin-top: 69px;
+	}
+	.tela1 .has-quizzes header {
+		justify-content: flex-start;
+	}
+	.tela1 .has-quizzes header h3 {
+		margin-right: 17px;
+	}
+	.tela1 .quizzes-list,.tela1 .has-quizzes .your-quizzes-list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.tela1 .quizzes h3 {
+		margin-bottom: 12px;
+	}
+	.tela1 .quizz {
+		margin-bottom: 12px;
+	}
+} 
