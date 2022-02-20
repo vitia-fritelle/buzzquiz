@@ -1,10 +1,11 @@
 import id from './contexts/page2Contexts/Id/Id.js';
 import score from './contexts/page2Contexts/Score/Score.js';
-import getQuizz from './adapters/page2Adapter.js';
-import Page2 from './pages/Page2.js';
-import {chooseAnswer} from './services/page2Services.js';
 import getQuizzes from './adapters/page1Adapter.js';
+import getQuizz from './adapters/page2Adapter.js';
 import Page1 from './pages/Page1.js';
+import Page2 from './pages/Page2.js';
+import Page3 from './pages/Page3.js'
+import {chooseAnswer} from './services/page2Services.js';
 
 export const goToPage1 = () => {
     getQuizzes().then((response) => {
@@ -36,4 +37,3 @@ window.chooseAnswer = chooseAnswer;
 window.goToPage1 = goToPage1;
 
 goToPage1();
-
