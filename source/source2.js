@@ -278,3 +278,83 @@ function validarDescricaoNivel (descricaoNivel) {
        return false;
    }
 }
+
+//---------------FUNÇÕES GERADORAS E REDENRIZADORAS DE CONTEÚDOS-----------------------
+
+//===================GERADORA DA TELA 3_2================================
+function geradorPerguntasQuizz (numeroPerguntas) {
+
+    for (let i = 0; i < numeroPerguntas; i++){
+        editarPerguntas[i] = `
+        <div class="editar__pergunta pergunta${i+1}">
+                <div>
+                    <span>Pergunta ${i+1}</span>
+                </div>
+                <div onclick='window.clickEditarPerguntas(perguntas[${i}], "pergunta${i+1}", ${i})'>
+                    <img src="./assets/images/editar.svg" alt="editar">
+                </div>    
+        </div>
+        `;
+        perguntas[i] = `
+            <div class="conjunto__pergunta perguntas${i+1}">
+                <span>Pergunta ${i+1}</span>
+                <div class="conjunto__inputs">
+                    <div class="input texto__pergunta"><input type="text" placeholder="Texto da pergunta"></div>
+                    <div class="input cor__pergunta"><input type="text" placeholder="Cor de fundo da pergunta"></div>
+                </div>
+                <span>Resposta correta</span>
+                <div class="conjunto__inputs">
+                    <div class="input resposta__correta"><input type="text" placeholder="Resposta correta"></div>
+                    <div class="input url__resposta__correta"><input type="text" placeholder="URL da imagem"></div>
+                </div>
+                <span>Respostas incorretas</span>
+                <div class="conjunto__inputs">
+                    <div class="input resposta__incorreta1"><input type="text" placeholder="Resposta incorreta 1"></div>
+                    <div class="input url__resposta__incorreta1"><input type="text" placeholder="URL da imagem 1"></div>
+                </div>
+                <div class="conjunto__inputs">
+                    <div class="input resposta__incorreta2"><input type="text" placeholder="Resposta incorreta 2"></div>
+                    <div class="input url__resposta__incorreta2"><input type="text" placeholder="URL da imagem 2"></div>
+                </div>
+                <div class="conjunto__inputs">
+                    <div class="input resposta__incorreta3"><input type="text" placeholder="Resposta incorreta 3"></div>
+                    <div class="input url__resposta__incorreta3"><input type="text" placeholder="URL da imagem 3"></div>
+                </div>
+            </div>
+        ` ;
+    }
+    redenrizarEditarPerguntas(editarPerguntas);
+}
+
+//===================REDENRIZADORA DA TELA 3_2================================
+function redenrizarEditarPerguntas (editarPerguntas) {
+    const telaDePerguntas = document.querySelector(".tela3__2 .editores__perguntas");
+    editarPerguntas.forEach(editarPergunta => {
+        telaDePerguntas.innerHTML += editarPergunta;
+    });
+}
+
+function clickEditarPerguntas (pergunta, classeEditarPergunta, index) {
+    if (index > 0){
+        questoesSemValidar = [];
+        for (let i= 0; i < index; i++){
+            capturarCampoDigitadoPergunta(i);
+        }
+    }
+    redendizarPerguntaNaTela (pergunta, classeEditarPergunta);
+    if (index > 0){
+        for (let i= 0; i < index; i++){
+            inserirCampoDigitadoPergunta(i);
+        }
+    }
+}
+
+function redendizarPerguntaNaTela (pergunta, classeEditarPergunta) {
+    const telaDePerguntas = document.querySelector(".tela3__2 .inputs");
+    telaDePerguntas.innerHTML += pergunta;
+    const divEditarPergunta = document.querySelector("." + classeEditarPergunta);
+    divEditarPergunta.classList.remove("editar__pergunta");
+    divEditarPergunta.classList.remove(classeEditarPergunta);
+    divEditarPergunta.classList.add("escondido");
+    console.log("PERGUNTA: " + pergunta);
+}
