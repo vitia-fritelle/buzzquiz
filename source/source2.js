@@ -437,3 +437,108 @@ function geradorConteudoTela3_4 (){
     const voltarHomeTela3_4 = document.querySelector(".tela3__4  .voltar__home");
     voltarHomeTela3_4.innerHTML = `<span onclick = "window.goToPage1()">Voltar pra home</span>`;
 }
+
+//---------------FUNÇÕES DE CAPTURA DE INPUTS-----------------------
+
+//===================CAPTURA DE CONTEÚNDO DA TELA 3_2================================
+function capturarCampoDigitadoPergunta(index){
+    let respostas = [];
+    let divPerguntas = `.perguntas${index+1}`;
+
+    const textoPergunta = document.querySelector(divPerguntas + " .texto__pergunta input");
+    console.log("Texto Pergunta: " + textoPergunta.value);
+    const corDeFundoPergunta = document.querySelector(divPerguntas + " .cor__pergunta input");
+    console.log("Cor Pergunta: " + corDeFundoPergunta.value);
+    const respostaCorreta = document.querySelector(divPerguntas + " .resposta__correta input");
+    console.log("Resposta Correta: " + respostaCorreta.value);
+    const urlRespostaCorreta = document.querySelector(divPerguntas + " .url__resposta__correta input");
+    console.log("URL Resposta Correta: " + urlRespostaCorreta.value);
+
+    let objetoRespostaCorreta = 
+    {
+        text: respostaCorreta.value,
+        image: urlRespostaCorreta.value,
+        isCorrectAnswer: true
+    };
+    respostas.push(objetoRespostaCorreta);
+    for (let i = 1; i <=3; i++) {
+        let classeRespostaIncorreta = ` .resposta__incorreta${i}`;
+        let classeUrlRespostaIncorreta = ` .url__resposta__incorreta${i}`;
+
+        let respostaIncorreta = document.querySelector(divPerguntas + classeRespostaIncorreta + " input");
+        console.log("Resposta Incorreta " + i + ": " + respostaIncorreta.value);
+        let urlRespostaIncorreta = document.querySelector(divPerguntas + classeUrlRespostaIncorreta + " input");
+        console.log("URL Resposta Incorreta "  + i + ": " +  urlRespostaIncorreta.value);
+
+        let objetoRespostaInCorreta = 
+        {
+            text: respostaIncorreta.value,
+            image: urlRespostaIncorreta.value,
+            isCorrectAnswer: false
+        };
+        respostas.push(objetoRespostaInCorreta);
+    }
+
+    console.log(respostas);
+
+    let questao = {
+        title: textoPergunta.value,
+        color: corDeFundoPergunta.value,
+        answers: respostas
+    }
+    questoesSemValidar.push(questao);
+}
+//===================INSERÇÃO DE CONTEÚNDO DA TELA 3_2================================
+function inserirCampoDigitadoPergunta(index){
+    let divPerguntas = `.perguntas${index+1}`;
+    let vetorInputs = document.querySelectorAll(divPerguntas + " input");
+    console.log(vetorInputs);
+    console.log()
+    vetorInputs[0].value = questoesSemValidar[index].title;
+    vetorInputs[1].value = questoesSemValidar[index].color;
+    vetorInputs[2].value = questoesSemValidar[index].answers[0].text;
+    vetorInputs[3].value = questoesSemValidar[index].answers[0].image;
+    vetorInputs[4].value = questoesSemValidar[index].answers[1].text;
+    vetorInputs[5].value = questoesSemValidar[index].answers[1].image;
+    vetorInputs[6].value = questoesSemValidar[index].answers[2].text;
+    vetorInputs[7].value = questoesSemValidar[index].answers[2].image;
+    vetorInputs[8].value = questoesSemValidar[index].answers[3].text;
+    vetorInputs[9].value = questoesSemValidar[index].answers[3].image;
+}
+
+//===================CAPTURA DE CONTEÚNDO DA TELA 3_3================================
+function capturarCampoDigitadoNivel (index){
+    let divNiveis = `.niveis${index+1}`;
+    let inputsNivel = document.querySelectorAll(divNiveis + " input");
+    let textareaNivel = document.querySelectorAll(divNiveis + " textarea");
+    console.log(divNiveis);
+    console.log(inputsNivel);
+
+    let nivel = {
+        title: inputsNivel[0].value,
+        minValue: inputsNivel[1].value,
+		image: inputsNivel[2].value,
+		text: textareaNivel[0].value
+    }
+
+    niveisSemValidar.push(nivel);
+}
+
+//===================INSERÇÃO DE CONTEÚNDO DA TELA 3_3================================
+function inserirCampoDigitadoNivel(index){
+    let divNiveis = `.niveis${index+1}`;
+    let vetorInputs = document.querySelectorAll(divNiveis + " input");
+    let vetorNivel = document.querySelectorAll(divNiveis + " textarea");
+
+    vetorInputs[0].value = niveisSemValidar[index].title;
+    vetorInputs[1].value = niveisSemValidar[index].minValue;
+    vetorInputs[2].value = niveisSemValidar[index].image;
+    vetorNivel[0].value = niveisSemValidar[index].text;
+}
+
+//=====================Colocar os onclicks no objeto global window====================
+window.validarTela3_1 = validarTela3_1;
+window.validarTela3_2 = validarTela3_2;
+window.validarTela3_3 = validarTela3_3; 
+window.clickEditarPerguntas = clickEditarPerguntas;
+window.clickEditarNivies = clickEditarNivies;
