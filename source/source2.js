@@ -419,3 +419,21 @@ function redendizarNivelNaTela (nivel, classeEditarNiveis) {
     divEditarNiveis.classList.add("escondido");
     console.log("NIVEIS: " + nivel);
 }
+
+//===================REDENRIZADORAS E GERADORA DA TELA 3_4================================
+function renderizaTela3__4 () {
+    const paginaTela3_3 = document.querySelector(".tela3__3");
+    paginaTela3_3.classList.add("escondido");
+    const paginaTela3_4 = document.querySelector(".tela3__4");
+    paginaTela3_4.classList.remove("escondido");
+    geradorConteudoTela3_4();
+
+}
+function geradorConteudoTela3_4 (){
+    const imagemTela3_4 = document.querySelector(".tela3__4 .tela3__4__img");
+    imagemTela3_4.innerHTML = `<img src=${quizz.image} alt="imagem do quizz">`;
+    const botaoTela3_4 = document.querySelector(".tela3__4 .botao");
+    botaoTela3_4.innerHTML = `<button onclick = "window.goToPage2(${idQuizz})">Acessar Quizz</button>`;
+    const voltarHomeTela3_4 = document.querySelector(".tela3__4  .voltar__home");
+    voltarHomeTela3_4.innerHTML = `<span onclick = "window.goToPage1()">Voltar pra home</span>`;
+}
