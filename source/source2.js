@@ -53,6 +53,26 @@ function validarTela3_1(){
     }
 }
 
+//===================VALIDAÇÃO DE TODOS OS CAMPOS TELA 3_2================================
+function validarTela3_2(){
+    questoesSemValidar = [];
+    questions = [];
+    for(let i = 0; i < qtdPerguntas; i++){
+        capturarCampoDigitadoPergunta(i);
+        validarQuestao(questoesSemValidar[i]);
+    }
+    if(questions.length == qtdPerguntas){
+        console.log("Questões Válidas");
+        const paginaTela3_2 = document.querySelector(".tela3__2");
+        paginaTela3_2.classList.add("escondido");
+        const paginaTela3_3 = document.querySelector(".tela3__3");
+        paginaTela3_3.classList.remove("escondido");
+        geradorNiveisQuizz(qtdNiveis);
+
+    } else {
+        alert("Há perguntas não validadas! Verique e tente novamente");
+    }
+}
 
 
 
@@ -114,5 +134,83 @@ function validarQtdNiveis (qtdNiveis) {
        console.log(qtdNiveis + " NÃO é um nº de NÍVEIS válidos");
        mensagemAlerta += "\nInsira um nº de NIVEIS válidos! >= 2";
        return false;
+   }
+}
+
+//===================VALIDAÇÕES NA TELA 3_2================================
+
+function validarQuestao(questaoAValidar) {
+    let respostasValidadas = [];
+    let existeRespostaCorreta = 0;
+    let existeRespostaIncorreta = 0;
+    let isValidoTituloPergunta = validarTituloPergunta(questaoAValidar.title);
+    let isValidoCorDeFundoPergunta = validarCorHexadecimal(questaoAValidar.color);
+
+    questaoAValidar.answers.forEach(resposta => {
+        if (validarResposta(resposta)){
+            respostasValidadas.push(resposta);
+            if(resposta.isCorrectAnswer){
+                existeRespostaCorreta++;
+            } else {
+                existeRespostaIncorreta++;
+            }
+        }
+    });
+
+    if(isValidoTituloPergunta && isValidoCorDeFundoPergunta){
+        console.log("Título e Cor da questão Validadas!");
+        if(existeRespostaCorreta > 0){
+            console.log("Existe resposta correta Validada!");
+            if(existeRespostaIncorreta > 0){
+                console.log("Existe " + existeRespostaIncorreta + " resposta incorreta Validada!");
+                let questoesValidadas = {
+                    title: questaoAValidar.title,
+                    color: questaoAValidar.color,
+                    answers: respostasValidadas
+                }
+                questions.push(questoesValidadas)
+                console.log("OBJETO ADICIONADO!");
+                console.log(questions);
+            }
+        }
+    } 
+}
+
+function validarTituloPergunta (tituloPergunta) {
+    if (tituloPergunta.length >= 20) {
+       console.log(tituloPergunta + " é um TÍTULO DA PERGUNTA válido!");
+       return true;
+   } else {
+       console.log(tituloPergunta + " NÃO é um TÍTULO DA PERGUNTA válido!");
+    //    mensagemAlerta +="Insira um TÍTULO válido!";
+       return false;
+   }
+}
+
+function validarCorHexadecimal(cor){
+    let pattern = new RegExp('#[0-9a-fA-F]{6}');
+    return !!pattern.test(cor);
+}
+
+function validarResposta (objetoResposta){
+    let isValidarTextoResposta = validarTextoResposta(objetoResposta.text);
+    let isValidarURL = validarURL(objetoResposta.image);
+    if (isValidarTextoResposta && isValidarURL){
+        console.log("Resposta Válida");
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function validarTextoResposta (textoResposta) {
+    if (textoResposta === null || textoResposta === "" || textoResposta.length <= 0) {
+        console.log(textoResposta + " NÃO é um TEXTO DA RESPOSTA válido!");
+        return false;       
+   } else {
+        console.log(textoResposta + " é um TEXTO DA RESPOSTA válido!");
+        console.log("TAMANHO do texto : " + textoResposta.length);
+        return true;
    }
 }
