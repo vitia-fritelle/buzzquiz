@@ -6,7 +6,7 @@ const LoadingPage = () => {
     ${Header()}
     <main class="loading-page">
         <figure>
-            <img src="../../assets/images/loading_image.svg" alt="loading image">
+            <img src="./assets/images/loading_image.svg" alt="loading image">
             <figcaption>Carregando</figcaption>
         </figure>
     </main>
