@@ -1,3 +1,7 @@
+.tela2 * {
+	color: #ffffff;
+}
+
 .tela2 .pointer,.tela2 button {
 	cursor: pointer;
 }
@@ -20,6 +24,7 @@ body > header{
     justify-content: center;
 	align-items: center;
 	z-index: 10;
+	color: #ffffff;
 }
 
 .tela2 {

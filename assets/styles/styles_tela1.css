@@ -1,3 +1,6 @@
+.tela1 * {
+	color: #ffffff;
+}
 .tela1 header {
 	font-weight:bold;
 }
@@ -38,6 +41,7 @@ body > header{
 	z-index: 10;
 	width:100%;
 	font-weight:bold;
+	color: #ffffff;
 }
 
 .tela1 {
