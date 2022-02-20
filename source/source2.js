@@ -358,3 +358,64 @@ function redendizarPerguntaNaTela (pergunta, classeEditarPergunta) {
     divEditarPergunta.classList.add("escondido");
     console.log("PERGUNTA: " + pergunta);
 }
+
+//===================GERADORA DA TELA 3_3================================
+function geradorNiveisQuizz (qtdNiveis) {
+    let editarNiveis = [];
+    for (let i = 0; i < qtdNiveis; i++){
+        editarNiveis[i] = `
+            <div class="editar__pergunta nivel${i+1}">
+                <div>
+                    <span>Nível ${i+1}</span>
+                </div>
+                <div onclick='window.clickEditarNivies(niveis[${i}], "nivel${i+1}", ${i})'>
+                    <img src="./assets/images/editar.svg" alt="editar">
+                </div>    
+            </div>
+        `;
+        niveis[i] = `
+            <div class="conjunto__pergunta cor__branco niveis${i+1} ">
+                <span>Nível ${i+1}</span>
+                <div class="conjunto__inputs">
+                    <div class="input"><input type="text" placeholder="Título do nível"></div>
+                    <div class="input"><input type="text" placeholder="% de acerto mínima"></div>
+                    <div class="input"><input type="text" placeholder="URL da imagem do nível"></div>
+                    <div class="input"><textarea name="" id="" cols="30" rows="10" placeholder="Descrição do nível"></textarea></div>
+                </div>
+            </div>
+        `
+    }
+    redenrizarEditarNiveis(editarNiveis);
+}
+//===================REDENRIZADORAS DA TELA 3_3================================
+function redenrizarEditarNiveis (editarNiveis) {
+    const telaDeNiveis = document.querySelector(".tela3__3 .editores__perguntas");
+    editarNiveis.forEach(editarNiveis => {
+        telaDeNiveis.innerHTML += editarNiveis;
+    });
+}
+
+function clickEditarNivies (nivel, classeEditarNiveis, index) {
+    if (index > 0){
+        niveisSemValidar = [];
+        for (let i= 0; i < index; i++){
+            capturarCampoDigitadoNivel(i);
+        }
+    }
+    redendizarNivelNaTela(nivel, classeEditarNiveis)
+    if (index > 0){
+        for (let i= 0; i < index; i++){
+            inserirCampoDigitadoNivel(i);
+        }
+    }
+}
+
+function redendizarNivelNaTela (nivel, classeEditarNiveis) {
+    const telaDeNiveis = document.querySelector(".tela3__3 .inputs");
+    telaDeNiveis.innerHTML += nivel;
+    const divEditarNiveis = document.querySelector("." + classeEditarNiveis);
+    divEditarNiveis.classList.remove("editar__pergunta");
+    divEditarNiveis.classList.remove(classeEditarNiveis);
+    divEditarNiveis.classList.add("escondido");
+    console.log("NIVEIS: " + nivel);
+}
