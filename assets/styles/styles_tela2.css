@@ -1,0 +1,254 @@
+.tela2 .pointer,.tela2 button {
+	cursor: pointer;
+}
+
+body {
+	background-color: #FAFAFA;
+}
+
+body > header{
+	right: 0;
+	top: 0;
+	left: 0;
+	line-height: 43px;
+	position: fixed;
+	font-size: 37px;
+	background: #EC362D;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	height: 69px;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	z-index: 10;
+}
+
+.tela2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    background-color: #FAFAFA;
+	margin: 69px auto 0 auto;
+}
+
+.tela2 > header {
+	width: 100%;
+	margin-bottom: 24px;
+}
+
+.tela2 > header figure {
+	position: relative;
+	width: 100%;
+	height: 142px;
+}
+
+.tela2 > header figure:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.tela2 > header figure > img {
+	width: 100%;
+	height: 100%;
+}
+
+.tela2 > header figure > figcaption {
+	position: absolute;
+	z-index: 2;
+	font-size: 19px;
+	line-height: 22px;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 309px;
+	text-align: center;
+}
+
+.tela2 > .quizzes > * {
+	max-width: 759px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+	padding: 18px 17px 11px 18px;
+	margin-bottom: 28px;
+}
+
+.tela2 > .quizzes > * > header {
+	height: 99px;
+	max-width: 688.16px;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0 17px;
+}
+
+.tela2 > .quizzes > * > figure  {
+	max-width: 688.16px;
+}
+
+.tela2 > .quizzes > * > figure > img  {
+	width: 100%;
+}
+
+.tela2 > .quizzes > * > figure > figcaption {
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 20px;
+	display: flex;
+	align-items: center;
+	color: #484848;
+}
+
+.tela2 .quizzes > li {
+	width: 375px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tela2 .answers {
+	margin-top: 13px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.tela2 .answer img {
+	width: 163px;
+	height: 113px;
+	margin-bottom: 5px;
+}
+
+.tela2 .answer figcaption {
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	color: #000000;
+	margin-bottom: 12px;
+}
+
+.tela2 .answer .correct {
+	color: #009C22;
+}
+
+.tela2 .answer .wrong {
+	color: #FF4B4B;
+}
+
+.tela2 .answers .esbranquicado {
+	opacity: 0.3;
+} 
+
+.tela2 .action {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.tela2 .restart-button {
+	width: 220.32px;
+	height: 44px;
+	background-color: #EC362D;
+	border-style: solid;
+	border-color: #EC362D;
+	border-radius: 15px;
+	font-size: 18px;
+	line-height: 21px;
+	color: #FFF5F4;
+	margin-bottom: 8px;
+}
+
+.tela2 .return-home {
+	width: 219.64px;
+	height: 44px;
+	font-size: 18px;
+	line-height: 21px;
+	background-color: #FAFAFA;
+	border-style: solid;
+	border-color: #FAFAFA;
+	color: #818181;
+}
+
+.tela2 .result header {
+	margin-bottom: 9px;
+}
+
+@media (min-width: 1100px) {
+	.tela2 .quizzes > li {
+		width: auto;
+	}
+
+	.tela2 .quizz {
+		width: 759px;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.tela2 .quizz > header {
+		width: 100%;	
+		height: 137.99px;
+		font-size: 23px;
+		line-height: 27px;
+		max-width: none;
+		padding: 0;
+	}
+
+	.tela2 .answers {
+		width: 100%;
+		margin-right: none;
+	}
+
+	.tela2 .answer figure {
+		margin-bottom: 60.47px;
+	}
+
+	.tela2 .answer figure img {
+		width: 329.91px;
+		height: 175.2px;
+		
+	}
+
+	.tela2 > .quizzes > * > header {
+		max-width: none;
+	}
+
+	.tela2 > .quizzes > * > figure {
+		max-width: none;
+	}
+
+	.tela2 > .quizzes .result > header {
+		font-size: 23px;
+		line-height: 27px;
+		height: 99px;
+	}
+
+	.tela2 > .quizzes  .result > figure{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.tela2 > .quizzes  .result > figure > img {
+		width: 364px;
+	}
+	
+	.tela2 > .quizzes  .result > figure > figcaption {
+		width: 328px;
+		font-size: 19px;
+		line-height: 25px;
+	}
+}
