@@ -536,6 +536,40 @@ function inserirCampoDigitadoNivel(index){
     vetorNivel[0].value = niveisSemValidar[index].text;
 }
 
+//---------------FUNÇÕES DE ENVIOS (POST) NA API-----------------------
+
+function enviarQuizz () {
+    const requisicao = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', quizz);
+    requisicao.then(tratarSucesso);
+    requisicao.catch(tratarError);   
+}
+
+function tratarSucesso (resposta) {
+    alert("Quizz Cadastrado com Sucesso!");
+    console.log (resposta);
+    idQuizz = resposta.data.id;
+    keyQuizz = resposta.data.key;
+    const idStorage = serializar(idQuizz);
+    const objetoStorage = serializar(resposta);
+    localStorage.setItem(idStorage, objetoStorage); //GRAVA NO LOCAL STORAGE
+    renderizaTela3__4();
+}
+
+function tratarError (erro) {
+    alert("Quizz não cadastrado!");
+    console.log("ERRO " + erro);
+}
+
+function serializar (objeto) {
+    const dadosSerializados = JSON.stringify(objeto);
+    return dadosSerializados;
+}
+
+function deserializar (dadosSerializados) {
+    const dadosDeserializados = JSON.parse(dadosSerializados);
+    return dadosDeserializados;
+}
+
 //=====================Colocar os onclicks no objeto global window====================
 window.validarTela3_1 = validarTela3_1;
 window.validarTela3_2 = validarTela3_2;
