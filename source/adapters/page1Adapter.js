@@ -1,7 +1,8 @@
-import { axiosInstance } from "./axiosUtils.js";
+import { axiosInstance, loadingInterceptor } from "./axiosUtils.js";
 
 const getQuizzes = () => {
     const myInstance = axiosInstance();
+    loadingInterceptor(myInstance);
     return myInstance.get();
 }
 
