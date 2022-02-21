@@ -12,7 +12,7 @@ const Tela2 = () => {
                     <!-- Conteúdo a ser inserido via JS -->
                 </div>
                 <div class="botao">
-                    <button  type="submit" onclick='window.validarTela3_2()'>Prosseguir pra criar níveis</button>
+                    <button  type="button" onclick='window.validarTela3_2()'>Prosseguir pra criar níveis</button>
                 </div>
             </form>
         </section>

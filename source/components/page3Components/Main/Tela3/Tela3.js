@@ -11,7 +11,7 @@ const Tela3 = () => {
                 <!-- Conteúdo a ser inserido via JS -->
                 </div>
                 <div class="botao">
-                    <button type="submit" onclick='window.validarTela3_3()'>Finalizar Quizz</button>
+                    <button type="button" onclick='window.validarTela3_3()'>Finalizar Quizz</button>
                 </div>
             </form>
     </section>

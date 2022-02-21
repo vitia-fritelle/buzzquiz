@@ -28,7 +28,7 @@ function validarTela3_1(){
     let url = document.querySelector(".tela3__1__url").value;
     console.log("URL: " + url);
     qtdPerguntas = document.querySelector(".tela3__1__perguntas").value;
-    console.log("Perguntas: " + perguntas);
+    console.log("Perguntas: " + qtdPerguntas);
     qtdNiveis = document.querySelector(".tela3__1__niveis").value;
     console.log("Níveis: " + qtdNiveis);
 
