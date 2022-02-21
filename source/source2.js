@@ -290,7 +290,7 @@ function geradorPerguntasQuizz (numeroPerguntas) {
                 <div>
                     <span>Pergunta ${i+1}</span>
                 </div>
-                <div onclick='window.clickEditarPerguntas(perguntas[${i}], "pergunta${i+1}", ${i})'>
+                <div onclick='window.clickEditarPerguntas(perguntas[${i}], "pergunta${i+1}", ${i})' data-identifier="expand">
                     <img src="./assets/images/editar.svg" alt="editar">
                 </div>    
         </div>
@@ -298,7 +298,7 @@ function geradorPerguntasQuizz (numeroPerguntas) {
         perguntas[i] = `
             <div class="conjunto__pergunta perguntas${i+1}">
                 <span>Pergunta ${i+1}</span>
-                <div class="conjunto__inputs">
+                <div class="conjunto__inputs" data-identifier="question">
                     <div class="input texto__pergunta"><input type="text" placeholder="Texto da pergunta"></div>
                     <div class="input cor__pergunta"><input type="text" placeholder="Cor de fundo da pergunta"></div>
                 </div>
@@ -368,7 +368,7 @@ function geradorNiveisQuizz (qtdNiveis) {
                 <div>
                     <span>Nível ${i+1}</span>
                 </div>
-                <div onclick='window.clickEditarNivies(niveis[${i}], "nivel${i+1}", ${i})'>
+                <div onclick='window.clickEditarNivies(niveis[${i}], "nivel${i+1}", ${i})' data-identifier="expand">
                     <img src="./assets/images/editar.svg" alt="editar">
                 </div>    
             </div>
@@ -376,7 +376,7 @@ function geradorNiveisQuizz (qtdNiveis) {
         niveis[i] = `
             <div class="conjunto__pergunta cor__branco niveis${i+1} ">
                 <span>Nível ${i+1}</span>
-                <div class="conjunto__inputs">
+                <div class="conjunto__inputs" data-identifier="level">
                     <div class="input"><input type="text" placeholder="Título do nível"></div>
                     <div class="input"><input type="text" placeholder="% de acerto mínima"></div>
                     <div class="input"><input type="text" placeholder="URL da imagem do nível"></div>
