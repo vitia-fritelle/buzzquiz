@@ -28,7 +28,7 @@ function validarTela3_1(){
     let url = document.querySelector(".tela3__1__url").value;
     console.log("URL: " + url);
     qtdPerguntas = document.querySelector(".tela3__1__perguntas").value;
-    console.log("Perguntas: " + perguntas);
+    console.log("Perguntas: " + qtdPerguntas);
     qtdNiveis = document.querySelector(".tela3__1__niveis").value;
     console.log("Níveis: " + qtdNiveis);
 
@@ -116,7 +116,7 @@ function validarTitulo (titulo) {
 // Validação da URL no javaScrip
 function validarURL (url) {  
    return true; //paleativo
-   if(validURL(url)) {
+   if(isValidHttpUrl(url)) {
        console.log(url + " é uma URL válida");
        return true;
    } else {
@@ -125,6 +125,15 @@ function validarURL (url) {
        return false;
    }
 }
+function isValidHttpUrl(string) {
+    let url;
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;  
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
 // Valida URL - função pronta 
 function validURL(str) {
    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
@@ -298,7 +307,7 @@ function geradorPerguntasQuizz (numeroPerguntas) {
         perguntas[i] = `
             <div class="conjunto__pergunta perguntas${i+1}">
                 <span>Pergunta ${i+1}</span>
-                <div class="conjunto__inputs">
+                <div class="conjunto__inputs" data-identifier="question">
                     <div class="input texto__pergunta"><input type="text" placeholder="Texto da pergunta"></div>
                     <div class="input cor__pergunta"><input type="text" placeholder="Cor de fundo da pergunta"></div>
                 </div>
@@ -368,7 +377,7 @@ function geradorNiveisQuizz (qtdNiveis) {
                 <div>
                     <span>Nível ${i+1}</span>
                 </div>
-                <div onclick='window.clickEditarNivies(niveis[${i}], "nivel${i+1}", ${i})'>
+                <div onclick='window.clickEditarNivies(niveis[${i}], "nivel${i+1}", ${i})' data-identifier="expand">
                     <img src="./assets/images/editar.svg" alt="editar">
                 </div>    
             </div>
@@ -376,7 +385,7 @@ function geradorNiveisQuizz (qtdNiveis) {
         niveis[i] = `
             <div class="conjunto__pergunta cor__branco niveis${i+1} ">
                 <span>Nível ${i+1}</span>
-                <div class="conjunto__inputs">
+                <div class="conjunto__inputs" data-identifier="level">
                     <div class="input"><input type="text" placeholder="Título do nível"></div>
                     <div class="input"><input type="text" placeholder="% de acerto mínima"></div>
                     <div class="input"><input type="text" placeholder="URL da imagem do nível"></div>
