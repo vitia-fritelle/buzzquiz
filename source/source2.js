@@ -116,7 +116,7 @@ function validarTitulo (titulo) {
 // Validação da URL no javaScrip
 function validarURL (url) {  
    return true; //paleativo
-   if(validURL(url)) {
+   if(isValidHttpUrl(url)) {
        console.log(url + " é uma URL válida");
        return true;
    } else {
@@ -125,6 +125,15 @@ function validarURL (url) {
        return false;
    }
 }
+function isValidHttpUrl(string) {
+    let url;
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;  
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
 // Valida URL - função pronta 
 function validURL(str) {
    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
