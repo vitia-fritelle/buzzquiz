@@ -17,11 +17,6 @@ body > header{
     color: #FFFFFF;
 }
 
-/* Tela 3 */
-/* .tela3 * {
-    color: #000000;
-} */
-
 .page3 .tela3 {
     margin-top: 69px;
     width: 100%;
@@ -179,4 +174,18 @@ body > header{
 /* Classe que esconde o layout */
 .page3 .escondido {
     display: none;
+}
+
+
+@media (min-width: 600px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    .page3 .tela3 {
+        width: 600px;
+    }
+    body {
+        background-color: #E5E5E5;
+    }
 }
