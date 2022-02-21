@@ -1,12 +1,14 @@
 import Header from '../components/loadingPageComponents/Header/Header.js';
+import Animation from '../components/loadingPageComponents/Animation/Animation.js';
 
 const LoadingPage = () => {
+    
     const body = document.querySelector("body");
     body.innerHTML = `
     ${Header()}
     <main class="loading-page">
         <figure>
-            <img src="./assets/images/loading_image.svg" alt="loading image">
+            ${Animation()}
             <figcaption>Carregando</figcaption>
         </figure>
     </main>

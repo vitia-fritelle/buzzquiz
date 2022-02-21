@@ -12,6 +12,7 @@ export const goToPage1 = () => {
         Page1(response);
         window.scrollTo(0, 0);
     });
+    return null;
 }
 
 export const goToPage2 = (numero) => {

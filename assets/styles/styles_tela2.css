@@ -6,6 +6,10 @@
 	cursor: pointer;
 }
 
+.tela2 figcaption {
+	word-break: break-all;
+}
+
 body {
 	background-color: #FAFAFA;
 }

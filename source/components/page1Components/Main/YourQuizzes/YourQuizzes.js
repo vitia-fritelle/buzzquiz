@@ -8,7 +8,7 @@ const YourQuizzes = (quizzes) => {
                     <button onclick='window.goToPage3()'>Criar Quizz</button>
                 </li>`;
     return `
-    <div class="your-quizzes ${quizzes.length !== 0 && 'has-quizzes'}">
+    <div class="your-quizzes ${quizzes.length !== 0 ?'has-quizzes':''}">
         ${Header()}
         <ul class="your-quizzes-list">
             ${quizzes.length === 0

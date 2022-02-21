@@ -4,11 +4,8 @@ const Tela2 = () => {
             <div class="titulo">
                 <p>Crie suas perguntas</p>
             </div>
-            <form name="formulario__tela3__2" action="#">
+            <form name="formulario__tela3__2">
                 <div class="inputs">
-                    <!-- Conteúdo a ser inserido via JS -->
-                </div>
-                <div class="editores__perguntas">
                     <!-- Conteúdo a ser inserido via JS -->
                 </div>
                 <div class="botao">
