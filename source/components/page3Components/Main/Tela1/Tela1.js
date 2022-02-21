@@ -5,7 +5,7 @@ const Tela1 = () => {
             <p>Comece pelo começo</p>
         </div>
         <form name="formulario__tela3__1" action="#">
-            <div class="inputs cor__branco">
+            <div class="inputs cor__branco" data-identifier="question">
                 <div class="input"><input class="tela3__1__titulo" type="text" placeholder="Título do seu quizz" minlength="20" maxlength="65" required></div>
                 <div class="input"><input class="tela3__1__url" type="url" placeholder="URL da imagem do seu quizz" pattern="https://.*" required></div>
                 <div class="input"><input class="tela3__1__perguntas" type="number" placeholder="Quantidade de perguntas do quizz" min="3" required></div>

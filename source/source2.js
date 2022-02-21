@@ -290,7 +290,7 @@ function geradorPerguntasQuizz (numeroPerguntas) {
                 <div>
                     <span>Pergunta ${i+1}</span>
                 </div>
-                <div onclick='window.clickEditarPerguntas(perguntas[${i}], "pergunta${i+1}", ${i})'>
+                <div onclick='window.clickEditarPerguntas(perguntas[${i}], "pergunta${i+1}", ${i})' data-identifier="expand">
                     <img src="./assets/images/editar.svg" alt="editar">
                 </div>    
         </div>
